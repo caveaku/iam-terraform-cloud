@@ -1,9 +1,9 @@
 provider "aws" {
-   region = var.region   #us-east-1
+   region = var.region   
 }
 
-resource "aws_iam_user" "pascalin" {
-  name = var.user_name    # pascalin
+resource "aws_iam_user" "pascaline" {
+  name = var.user_name    
   path = "/system/"
 
   tags = {
@@ -16,7 +16,7 @@ resource "aws_iam_access_key" "accesskey" {
 }
 
 resource "aws_iam_user_policy" "lb_ro" {
-  name = var.iam_policy_name    # test
+  name = var.iam_policy_name    
   user = aws_iam_user.pascalin.name
 
   policy = <<EOF
