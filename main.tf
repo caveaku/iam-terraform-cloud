@@ -11,11 +11,11 @@ resource "aws_iam_user" "pascaline" {
   }
 }
 
-resource "aws_iam_access_key" "accesskey" {
+resource "aws_iam_access_key" "pascalin" {
   user = aws_iam_user.pascalin.name
 }
 
-resource "aws_iam_user_policy" "lb_ro" {
+resource "aws_iam_user_policy" "pascalin" {
   name = var.iam_policy_name    
   user = aws_iam_user.pascalin.name
 
