@@ -12,12 +12,12 @@ resource "aws_iam_user" "pascaline" {
 }
 
 resource "aws_iam_access_key" "accesskey" {
-  user = aws_iam_user.pascalin.id
+  user = aws_iam_user.pascalin.name
 }
 
 resource "aws_iam_user_policy" "lb_ro" {
   name = var.iam_policy_name    
-  user = aws_iam_user.pascalin.id
+  user = aws_iam_user.pascalin.name
 
   policy = <<EOF
 {
