@@ -8,10 +8,20 @@ provider "aws" {
 
 
 resource "aws_iam_user" "users" {
-  count = 3
-
- name = "${var.user_name_prefix}-${count.index+1}"
+  count = length(var.user_names)
+  name = var.user_names[count.index]
 }
+
+
+
+
+
+
+# resource "aws_iam_user" "users" {
+#   count = 3
+
+#  name = "${var.user_name_prefix}-${count.index+1}"
+# }
 
 
 # resource "aws_iam_access_key" "pascalin" {
