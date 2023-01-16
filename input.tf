@@ -1,5 +1,5 @@
 
-variable "region" {}
+# variable "region" {}
 
 variable "iam_user_name" {}
 
