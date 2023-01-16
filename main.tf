@@ -2,8 +2,15 @@ provider "aws" {
    region = "us-east-1"  
 }
 
-resource "aws_iam_user" "iam_user" {
-  name = var.iam_user_name
+# resource "aws_iam_user" "iam_user" {
+#   name = var.iam_user_name
+# }
+
+
+resource "aws_iam_user" "users" {
+  count = 3
+
+ name = "${var.user_name_prefix}-${count.index+1}"
 }
 
 
